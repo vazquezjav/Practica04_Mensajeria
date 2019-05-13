@@ -43,11 +43,11 @@
             </tr>
             <?php
                 include "../../config/conexionBD.php";
-                $correo=$_GET['correo'];
+                #$correo=$_GET['correo'];
                 $sql ="SELECT * FROM usuario WHERE usu_correo='$correo'";
                 $result=$conn->query($sql);
 
-                
+                echo "<p>$correo</p>";
                 if($result->num_rows>0){
                     while($row=$result->fetch_assoc()){
 
@@ -62,7 +62,7 @@
                             echo "  <td align=center>" .$row["usu_correo"]."</td>";
                             echo "  <td align=center>" .$row["usu_fecha_nacimiento"]."</td>";
                             echo "  <td align=center>" ."<a href='cambiar.php?codigo=$codigo'>Modificar</a>". "</td>";
-                            echo "  <td align=center>" ."<a href='contrasena.php?codigo=$codigo'>Cambiar Contrasena</a>". "</td>";
+                            echo "  <td align=center>" ."<a href='contrasena.php?codigo=$codigo&correo=$correo'>Cambiar Contrasena</a>". "</td>";
                         }
                       
                     }

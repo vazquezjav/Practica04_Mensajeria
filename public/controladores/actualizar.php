@@ -27,7 +27,17 @@
 
         $sql="UPDATE usuario SET usu_nombres='$nombre', usu_apellidos='$apellido', usu_cedula='$cedula', usu_direccion='$direccion',
                 usu_fecha_nacimiento='$fechaNacimiento', usu_fecha_modificacion='$modificacion' WHERE usu_codigo='$codigo'";
-        echo "<p> $codigo  <p>";
+
+       $sql_correo="SELECT * FROM usuario WHERE usu_codigo='$codigo'";
+       $result=$conn->query($sql_correo);  
+       if($result->num_rows>0){
+           while($row=$result->fetch_assoc()){
+               if($row["usu_eliminado"]=='N'){
+               $correo=$row["usu_correo"];
+               }
+           }
+       }
+
         if($conn->query($sql)===TRUE){
             echo "<p> Actualizado</p>";
 
@@ -41,7 +51,7 @@
         }
 
         $conn->close();
-        echo "<a href='../vista/micuenta.php'>Regresar</a> "
+        echo "<a href='../vista/micuenta.php?correo=$correo'>Regresar</a> "
 
     ?>
 
