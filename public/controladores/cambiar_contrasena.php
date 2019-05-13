@@ -18,7 +18,7 @@
        echo "<a href='../vista/micuenta.php?correo=$correo'> Regresar </a>";
     }else{
         echo "<h2> La contrasena actual no coincide </h2>";
-        echo "<a href='../vista/contrasena.php?codigo=$codigo'> Regresar </a>";
+        echo "<a href='../vista/contrasena.php?codigo=$codigo&correo=$correo'> Regresar </a>";
        # header("Location: ../vista/contrasena.php?codigo=$codigo");
    }
    $conn->close();
