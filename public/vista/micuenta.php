@@ -14,6 +14,17 @@
 </head>
 <header>
     <h1>Cambiar Informacion </h1>
+    <nav>
+        <ul>
+            <?php
+            $correo=$_GET['correo'];
+            echo " <a href='index.php?correo=$correo'>  Inicio  </a>" ;
+            echo "<a href='nuevo_mensaje.php?correo=$correo'>  Nuevo Mensaje</a>";
+            echo " <a href='politica.html'> Mensajes Enviados  </a>";
+            echo "<a href='micuenta.php?correo=$correo'>Mi Cuenta  </a>";
+            ?>
+        </ul>
+    </nav>
 </header>
 
 <body>
@@ -32,7 +43,8 @@
             </tr>
             <?php
                 include "../../config/conexionBD.php";
-                $sql ="SELECT * FROM usuario";
+                $correo=$_GET['correo'];
+                $sql ="SELECT * FROM usuario WHERE usu_correo='$correo'";
                 $result=$conn->query($sql);
 
                 

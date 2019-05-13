@@ -7,11 +7,10 @@
     $contrasena=isset($_POST["contraseña"]) ? trim($_POST["contraseña"]):null;
 
     $sql="SELECT * FROM usuario WHERE usu_correo='$usuario' and usu_password=MD5('$contrasena')";
-
     $result=$conn->query($sql);
     if($result->num_rows>0){
         $_SESSION['isLogged']=TRUE;
-        header("Location: ../vista/micuenta.php");
+        header("Location: ../vista/index.php?correo=$usuario");
    }else{
        header("Location: ../vista/login.html");
    }
