@@ -20,7 +20,7 @@
             $correo=$_GET['correo'];
             echo " <a href='index.php?correo=$correo'>  Inicio  </a>" ;
             echo "<a href='nuevo_mensaje.php?correo=$correo'>  Nuevo Mensaje</a>";
-            echo " <a href='politica.html'> Mensajes Enviados  </a>";
+            echo " <a href='mensajes_enviados.php?correo=$correo'> Mensajes Enviados  </a>";
             echo "<a href='micuenta.php?correo=$correo'>Mi Cuenta  </a>";
             ?>
         </ul>

@@ -4,6 +4,16 @@
         <title>Mensajes Usuarios</title>
         <meta charset="UTF-8">
     </head>
+    <header>
+    <nav>
+        <ul>
+            <?php
+            echo " <a href='mensaje.php'>  Inicio  </a>" ;
+            echo "<a href='index_admin.php'> Usuarios </a>";
+            ?>
+        </ul>
+    </nav>
+    </header>
     <body>
         <table style="width:100%" border=1>
             <tr>

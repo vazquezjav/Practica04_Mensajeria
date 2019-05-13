@@ -5,9 +5,17 @@
     <title> Configuracion</title>
     <meta charset="UTF-8">
 </head>
+
 <header>
-    <h1>Cambiar Informacion </h1>
-</header>
+    <nav>
+        <ul>
+            <?php
+            echo " <a href='mensaje.php'>  Inicio  </a>" ;
+            echo "<a href='index_admin.php'> Usuarios </a>";
+            ?>
+        </ul>
+    </nav>
+    </header>
 
 <body>
     

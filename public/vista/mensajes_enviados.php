@@ -4,13 +4,6 @@
 <head>
     <title>Principal</title>
     <meta charset="UTF-8"> 
-    <?php
-        include "../../config/conexionBD.php";
-        $sql ="SELECT * FROM usuario";
-        $result=$conn->query($sql);
-        $remitente=$_GET['correo'];
-        echo "<h1>$remitente</h1>";
-     ?>
 </head>
 <header>
     <h1>Mensajes Recibidos</h1>
@@ -32,25 +25,26 @@
     <table border="1">
         <tr>
             <th rowspan="1">Fecha</th>
-            <th rowspan="1">Remitente</th>
+            <th rowspan="1">Destinatario</th>
             <th colspan="1"> Asunto</th>
-            <th rowspan="1">Mensaje</th>
+            <th rowspan="1"></th>
         </tr>
         <?php
                 include "../../config/conexionBD.php";
-                $sql ="SELECT * FROM mensaje WHERE men_destinatario='$remitente'";
+                $sql ="SELECT * FROM mensaje WHERE men_remitente='$correo'";
+                echo "<p>$correo</p>";
                 $result=$conn->query($sql);
                 if($result->num_rows>0){
                     while($row=$result->fetch_assoc()){
                         if($row["men_eliminado"]=='N'){
                         echo "<tr>";
                         echo "  <td align=center>" .$row["men_fecha"]."</td>";
-                        echo "  <td align=center>" .$row["men_remitente"]."</td>";
+                        echo "  <td align=center>" .$row["men_destinatario"]."</td>";
                         echo "  <td align=center>" .$row["men_asunto"]."</td>";
                         echo "  <td align=center>" .$row["men_mensaje"]."</td>";
                         echo "</tr>";
-                        }
                     }
+                }
                 }
             ?>
           

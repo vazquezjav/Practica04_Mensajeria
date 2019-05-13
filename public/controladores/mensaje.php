@@ -18,13 +18,13 @@
          date_default_timezone_set("America/Guayaquil");
          $fecha=date('Y-m-d H:i:s',time());
  
-         $sql="INSERT INTO mensaje VALUES(0,'$remitente','$destinatario','$asunto','$mensaje','$fecha') ";
+         $sql="INSERT INTO mensaje VALUES(0,'$remitente','$destinatario','$asunto','$mensaje','$fecha','N') ";
 
          if($conn->query($sql)===TRUE){
             echo "<p> Se ha enviado correctamente el mensaje  </p>";
         }
         $conn->close();
-        echo "<a href='../vista/index.php'>Regresar</a> "
+        echo "<a href='../vista/index.php?correo=$remitente'>Regresar</a> "
 
         ?>
     </body>
