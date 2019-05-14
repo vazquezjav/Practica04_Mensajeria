@@ -2,7 +2,7 @@
     session_start();
     if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] ===FALSE){
         echo "<script> alert ('No tiene permisos para ingresar');</script>";
-        header("Location: /Practica04_Mensajeria/public/vista/login.html");
+        header("Location: login.html");
     }
 ?>
 <!DOCTYPE html>

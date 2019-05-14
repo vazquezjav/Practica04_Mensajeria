@@ -9,7 +9,7 @@
     $sql="SELECT * FROM usuario WHERE usu_correo='$usuario' and usu_password=MD5('$contrasena')";
     $result=$conn->query($sql);
     $row=mysqli_fetch_array($result);
-    if($result->num_rows>0){
+    if($result->num_rows > 0){
         $_SESSION['isLogged']=TRUE;
         $_SESSION['usu_rol']=$row['usu_rol'];
         if($row['usu_rol']=='A'){

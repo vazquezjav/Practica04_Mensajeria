@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE || $_SESSION['usu_rol']=='U'){
+        header("Location: ../../../public/vista/login.html");
+    }
+?>
 <!DOCTYPE html>
 <html>
     <head>
