@@ -27,13 +27,17 @@
         #$contenido_img= addslashes(file_get_contents($nombre_img));
         $contenido_img=isset($_FILES["imagen"]["tmp_name"])? trim($_FILES["imagen"]["tmp_name"]):null;
 
-        
+        $imagenES=$conn->real_escape_string(file_get_contents($_FILES["imagen"]["tmp_name"]));
+
         date_default_timezone_set("America/Guayaquil");
         $modificacion=date('Y-m-d',time());
+        
+        
 
-        $sql="INSERT INTO usuario VALUES(0,'$cedula','$nombres','$apellidos','$direccion','$telefono','$correo',MD5('$contraseña'),'$fechaNacimiento','N',null,null)";
-
-        $sql_img="INSERT INTO imagen VALUES(0,'$nombre_img','$contenido_img','$modificacion')";
+        $sql="INSERT INTO usuario VALUES(0,'$cedula','$nombres','$apellidos','$direccion','$telefono','$correo',MD5('$contraseña'),'$fechaNacimiento','N',null,null,'U')";
+        
+        $sql_img="INSERT INTO imagen VALUES(0,'$nombre_img','$imagenES','$modificacion')";
+        
 
         
         if($conn->query($sql)===TRUE){
@@ -51,6 +55,9 @@
         }else{
             echo "<p> No imagen </p>";
         }
+        $img_codigo=$conn->insert_id;
+        echo "<p>$img_codigo</p>";
+        echo "<img src='ver.php?codigo=$img_codigo' alt=''>";
         $conn->close();
         echo "<a href='../vista/crear_usuario.html'>Regresar</a> "
 

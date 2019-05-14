@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE || $_SESSION['usu_rol']=='U'){
+        header("Location: ../../../public/vista/login.html");
+    }
+?>
 <!DOCTYPE html>
 <html>
 
@@ -12,6 +18,7 @@
             <?php
             echo " <a href='mensaje.php'>  Inicio  </a>" ;
             echo "<a href='index_admin.php'> Usuarios </a>";
+            echo "<h1>" . $_SESSION['usu_rol'] . "</h1>";
             ?>
         </ul>
     </nav>
@@ -28,6 +35,7 @@
                 <th>Telefono</th>
                 <th>Correo</th>
                 <th>Fecha Nacimiento </th>
+                <th>Rol </th>
                 <th>Modificar </th>
                 <th>Eliminar </th>
                 <th> Cambiar Contrasena</th>
@@ -50,6 +58,7 @@
                         echo "  <td align=center>" .$row["usu_telefono"]."</td>";
                         echo "  <td align=center>" .$row["usu_correo"]."</td>";
                         echo "  <td align=center>" .$row["usu_fecha_nacimiento"]."</td>";
+                        echo "  <td align=center>" .$row["usu_rol"]."</td>";
                         echo "  <td align=center>" ."<a href='cambiar.php?codigo=$codigo'>Modificar</a>". "</td>";
                         echo "  <td align=center>" ."<a href='../../controladores/eliminar.php?codigo=$codigo'>Eliminar</a>". "</td>";
                         echo "  <td align=center>" ."<a href='contrasena.php?codigo=$codigo'>Cambiar Contrasena</a>". "</td>";
@@ -57,7 +66,9 @@
                         }
                     }
                 }
+                
             ?>
+        
 
         </table>
 </body>

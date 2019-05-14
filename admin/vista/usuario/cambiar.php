@@ -21,6 +21,7 @@
         $telefono=$row["usu_telefono"];
         $fecha=$row["usu_fecha_nacimiento"];
         $cedula=$row["usu_cedula"]; 
+        $rol=$row["usu_rol"];
         echo "<form id='formulario1' method='POST' action='../../controladores/actualizar.php'>";
 
         echo "<label for='codigo'>Codigo</label>";
@@ -54,6 +55,11 @@
             
         echo "<label for='fecha'>Fecha Nacimiento </label>";
         echo " <input type='date' id='fechaNacimiento' name='fechaNacimiento' value='$fecha' required/>";
+    
+        echo " <br>";
+
+        echo "<label for='rol'>Rol </label>";
+        echo " <input type='text' id='rol' name='rol' value='$rol' required/>";
     
         echo " <br>";
     
