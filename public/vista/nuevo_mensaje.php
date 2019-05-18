@@ -11,7 +11,7 @@
         <meta charset="UTF-8">
     </head>
     <header>
-    <h1>Mensajes Recibidos</h1>
+    <h1>Nuevo mensaje</h1>
    <nav>
         <ul>
             <?php

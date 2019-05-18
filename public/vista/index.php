@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
+    if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE || $_SESSION['usu_rol'] =='A' ){
         header("Location: login.html");
     }
 ?>
@@ -10,6 +10,7 @@
 <head>
     <title>Principal</title>
     <meta charset="UTF-8"> 
+    <script type="text/javascript" src="../buscar/ajax.js"></script>
     <?php
         include "../../config/conexionBD.php";
         $sql ="SELECT * FROM usuario";
@@ -34,8 +35,12 @@
 </header>
 
 <body>
-   
-    <table border="1">
+    <form id="formulario1" >
+       <input type="text" id="busqueda" name="busqueda" value="" onkeyup="buscarPorCedula()">
+
+    </form>
+    <br>
+    <table id="tabla" border="1" >
         <tr>
             <th rowspan="1">Fecha</th>
             <th rowspan="1">Remitente</th>
@@ -50,7 +55,7 @@
                     while($row=$result->fetch_assoc()){
                         if($row["men_eliminado"]=='N'){
                         echo "<tr>";
-                        echo "  <td align=center>" .$row["men_fecha"]."</td>";
+                        echo "  <td align=center id='fecha'>" .$row["men_fecha"]."</td>";
                         echo "  <td align=center>" .$row["men_remitente"]."</td>";
                         echo "  <td align=center>" .$row["men_asunto"]."</td>";
                         echo "  <td align=center>" .$row["men_mensaje"]."</td>";
@@ -61,6 +66,9 @@
             ?>
           
     </table>
+
+    <div id="informacion"><b></b></div> 
+
 </body>
 
 </html>

@@ -12,6 +12,7 @@
     if($result->num_rows > 0){
         $_SESSION['isLogged']=TRUE;
         $_SESSION['usu_rol']=$row['usu_rol'];
+        $_SESSION['usu_correo']=$row['usu_correo'];
         if($row['usu_rol']=='A'){
             header("Location: ../../admin/vista/usuario/index_admin.php");
         }else{
@@ -19,7 +20,8 @@
         }
         
    }else{
-       header("Location: ../vista/login.html");
+       echo "<p>No entra</p>";
+      # header("Location: ../vista/login.html");
    }
    $conn->close();
 ?>
