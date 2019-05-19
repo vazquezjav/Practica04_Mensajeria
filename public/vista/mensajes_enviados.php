@@ -11,6 +11,7 @@
     <title>Principal</title>
     <meta charset="UTF-8"> 
     <script type="text/javascript" src="../buscar/destinatario.js"></script>
+    <link href="../estilos/mensajes_enviados.css" rel="stylesheet" />
 
 </head>
 <header>
@@ -19,23 +20,23 @@
         <ul>
             <?php
             $correo=$_GET['correo'];
-            echo " <a href='index.php?correo=$correo'>  Inicio  </a>" ;
-            echo "<a href='nuevo_mensaje.php?correo=$correo'>  Nuevo Mensaje</a>";
-            echo " <a href='mensajes_enviados.php?correo=$correo'> Mensajes Enviados  </a>";
-            echo "<a href='micuenta.php?correo=$correo'>Mi Cuenta  </a>";
+            #echo "<meta http-equiv='Refresh' content='3;url=index.php?correo=$correo'";
+            echo "<li> <a href='index.php?correo=$correo'>  Inicio  </a></li>" ;
+            echo "<li><a href='nuevo_mensaje.php?correo=$correo'>  Nuevo Mensaje</a></li>";
+            echo "<li> <a href='mensajes_enviados.php?correo=$correo'> Mensajes Enviados  </a></li>";
+            echo "<li><a href='micuenta.php?correo=$correo'>Mi Cuenta  </a></li>";
             ?>
         </ul>
     </nav>
 </header>
 
-<body>
+<body class="centro">
     <form id="formulario2" >
-       <input type="text" id="busqueda" name="busqueda" value="" onkeyup="destinatario()">
+       <input type="text" class="busqueda"   id="busqueda" name="busqueda" value="" placeholder=" &#x1F50E; "  onkeyup="destinatario()">
 
     </form>
     <br>
-    <br>
-    <table border="1">
+    <table border="1" class="centro">
         <tr>
             <th rowspan="1">Fecha</th>
             <th rowspan="1">Destinatario</th>
@@ -45,7 +46,6 @@
         <?php
                 include "../../config/conexionBD.php";
                 $sql ="SELECT * FROM mensaje WHERE men_remitente='$correo'";
-                echo "<p>$correo</p>";
                 $result=$conn->query($sql);
                 if($result->num_rows>0){
                     while($row=$result->fetch_assoc()){

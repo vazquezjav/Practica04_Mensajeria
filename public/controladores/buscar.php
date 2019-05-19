@@ -7,6 +7,7 @@
    <?php
        session_start();
         include '../../config/conexionBD.php';
+        
 
         $remitente = $_GET['cedula'];
         $destinatario=$_SESSION['usu_correo'];
@@ -16,7 +17,7 @@
         }else{
             $sql="SELECT * FROM mensaje WHERE men_remitente LIKE '%$remitente%' and men_destinatario = '$destinatario'";
             $result=$conn->query($sql);
-            echo "<h1> Resultados Busqueda</h1>";
+            echo "<h2> Resultados Busqueda</h2>";
             echo "<table border='1'";
             if($result->num_rows>0){
                 echo "<tr>";

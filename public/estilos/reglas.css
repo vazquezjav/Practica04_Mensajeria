@@ -1,0 +1,94 @@
+#header{
+    width: 100%;
+    border-width: 1px;
+    /*border-color: brown;
+    border-style: double;*/
+    text-align: center; 
+    height: 50;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: aqua;
+    color: rgb(202, 103, 57);
+}
+.fondo_boton{
+    background: rgb(231, 116, 108);
+    border-radius: 90px 90px 90px 90px;
+    width: 50%;
+}
+.body_crear {
+        background-image: url("../Imagenes/crear_usuario.JPG");
+        width: 100%;
+        min-height:100%;
+         margin-left: auto;
+         margin-right: auto;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        float: left;
+}
+
+form {
+    padding: 1em;
+    background: #f3eaea;
+    border: 1px solid #c1c1c1;
+    margin-top: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+    text-align: center;
+    background: rgba(184, 209, 184, 0.3);
+
+    border-width: 2px;
+    border-color: rgba(184, 209, 184, 0.3);
+    border-style: inset;
+    align-content: center;
+}
+form input {
+    margin-bottom: 1rem;
+    background: #fff;
+    border: 1px solid #9c9c9c;
+}
+form button {
+    background: rgb(243, 77, 77);
+    padding: 0.7em;
+    border: 0;
+}
+form button:hover {
+    background: rgb(101, 180, 55);
+}
+
+label {
+    text-align: center;
+    display: block;
+    padding: 1em 1.5em 1em 0;
+}
+  
+input {
+    width: 100%;
+    padding: 0.7em;
+    margin-bottom: 0.5rem;
+  }
+  input:focus {
+    outline: 3px solid rgb(158, 112, 26);
+  }
+
+  @media (min-width: 600px) {
+form {
+     overflow: auto;
+ }
+  
+label {
+      float: left;
+      width: 300px;
+}
+  
+input {
+      float: left;
+      width: calc(100% - 200px);
+}
+
+button {
+      float: left;
+      width: calc(50% - 200px);
+}
+}

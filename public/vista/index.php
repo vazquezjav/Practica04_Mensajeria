@@ -9,15 +9,14 @@
 
 <head>
     <title>Principal</title>
-    <meta charset="UTF-8"> 
-    
+    <meta charset="UTF-8">     
     <script type="text/javascript" src="../buscar/ajax.js"></script>
+    <link href="../estilos/index.css" rel="stylesheet" />
     <?php
         include "../../config/conexionBD.php";
         $sql ="SELECT * FROM usuario";
         $result=$conn->query($sql);
         $remitente=$_GET['correo'];
-        echo "<h1>$remitente</h1>";
      ?>
 </head>
 <header>
@@ -28,23 +27,24 @@
             <?php
             $correo=$_GET['correo'];
             #echo "<meta http-equiv='Refresh' content='3;url=index.php?correo=$correo'";
-            echo " <a href='index.php?correo=$correo'>  Inicio  </a>" ;
-            echo "<a href='nuevo_mensaje.php?correo=$correo'>  Nuevo Mensaje</a>";
-            echo " <a href='mensajes_enviados.php?correo=$correo'> Mensajes Enviados  </a>";
-            echo "<a href='micuenta.php?correo=$correo'>Mi Cuenta  </a>";
+            echo "<li> <a href='index.php?correo=$correo'>  Inicio  </a></li>" ;
+            echo "<li><a href='nuevo_mensaje.php?correo=$correo'>  Nuevo Mensaje</a></li>";
+            echo "<li> <a href='mensajes_enviados.php?correo=$correo'> Mensajes Enviados  </a></li>";
+            echo "<li><a href='micuenta.php?correo=$correo'>Mi Cuenta  </a></li>";
             ?>
         </ul>
     </nav>
 </header>
 
-<body>
+<body class="centro">
+    <br>
     <form id="formulario1" >
-       <input type="text" id="busqueda" name="busqueda"  value="" placeholder=" &#x1F50E; Ingrese su busqueda"  onkeyup="buscarPorCedula()">
+       <input type="text" class="busqueda" id="busqueda" name="busqueda"  value="" placeholder=" &#x1F50E; "  onkeyup="buscarPorCedula()">
 
     </form>
     <br>
-    <table id="tabla" border="1" >
-        <tr>
+    <table id="tabla" border="1" class="centro">
+        <tr >
             <th rowspan="1">Fecha</th>
             <th rowspan="1">Remitente</th>
             <th colspan="1"> Asunto</th>

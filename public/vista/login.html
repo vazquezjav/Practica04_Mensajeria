@@ -3,20 +3,23 @@
     <head>
         <meta charset="UTF-8">
         <title>Iniciar secion</title>
+        <link href="../estilos/login.css" rel="stylesheet" />
     </head>
-    <body>
-        <form id="formulario" method="POST" action="../controladores/login.php">
+    <body class="body_login">
+        <form id="formulario"  method="POST" action="../controladores/login.php">
+            <legend> <h1> &#x1F64D;&#x200D;&#x2642;&#xFE0F; / &#x1F64D; Iniciar Sesion</h1></legend>
             <label for="correo">Correo electronico</label>
-            <input type="text" id="correo" name="correo" value="" placeholder="Ingrese su correo"/>
+            <input type="text" id="correo" name="correo" value="" placeholder="&#x1F464; Ingrese su correo"/>
 
             <br>
 
             <label for="nombres">Contrasena</label>
-            <input type="password" id="contraseña" name="contraseña" value="" placeholder="Ingrese su contrasena"/>
+            <input type="password" id="contraseña" name="contraseña" value="" placeholder="&#x1F511;Ingrese su contrasena"/>
 
             <br>
 
-            <input type="submit" id="login" name="login" value="Iniciar Secion"/>
+            <input type="submit" class="fondo_boton" id="login" name="login" value="Iniciar Secion"/>
+            <input type="button"class="fondo_boton"  id="crear" name="crear" value="Registrarse" onclick="location='crear_usuario.html'"/>
             
         </form>
     </body>

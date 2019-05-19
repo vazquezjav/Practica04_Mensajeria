@@ -16,7 +16,7 @@
         }else{
             $sql="SELECT * FROM mensaje WHERE men_destinatario LIKE '%$destinatario%' and men_remitente = '$remitente'";
             $result=$conn->query($sql);
-            echo "<h1> Resultados Busqueda</h1>";
+            echo "<h2> Resultados Busqueda</h2>";
             echo "<table border='1'";
             if($result->num_rows>0){
                 echo "<tr>";
@@ -37,7 +37,7 @@
                     }
                 }
             }else{
-                echo "<p> No ha enviado correos a la direccion:  $destinatario </p>";
+                echo "<h3 > No ha enviado correos a la direccion:  $destinatario </h3>";
             }
 
         }
