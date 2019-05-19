@@ -51,12 +51,12 @@
             }
         }
         #if($conn->query($sql_img) === TRUE){
-        #    echo "<p> Se imagen </p>";
+         #   echo "<p> Se imagen </p>";
         #}else{
         #    echo "<p> No imagen </p>";
         #}
         #$img_codigo=$conn->insert_id;
-        #echo "<img src='ver.php?codigo=$img_codigo' alt=''>";
+        #echo "<img src='ver.php?codigo=$img_codigo' style='position:absolute; top=0; left:0;' alt=''>";
         $conn->close();
        # echo "<a href='../vista/crear_usuario.html'>Regresar</a> "
         

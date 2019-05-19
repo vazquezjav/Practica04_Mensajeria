@@ -39,7 +39,7 @@
 
 <body>
     <form id="formulario1" >
-       <input type="text" id="busqueda" name="busqueda" value="" onkeyup="buscarPorCedula()">
+       <input type="text" id="busqueda" name="busqueda"  value="" placeholder=" &#x1F50E; Ingrese su busqueda"  onkeyup="buscarPorCedula()">
 
     </form>
     <br>
@@ -52,7 +52,7 @@
         </tr>
         <?php
                 include "../../config/conexionBD.php";
-                $sql ="SELECT * FROM mensaje WHERE men_destinatario='$remitente'";
+                $sql ="SELECT * FROM mensaje WHERE men_destinatario='$remitente' ORDER BY men_fecha DESC";
                 $result=$conn->query($sql);
                 if($result->num_rows>0){
                     while($row=$result->fetch_assoc()){
