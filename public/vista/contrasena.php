@@ -8,11 +8,12 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <link href="../estilos/nuevo_mensaje.css" rel="stylesheet" />
 </head>
 <header>
     <h1>Modificar contrasena</h1>
 </header>
-<body >
+<body class="centro">
     <?php
     #include "../../config/conexionBD.php";
     $codigo=$_GET['codigo'];
@@ -25,16 +26,16 @@
        <input type="hidden" id="codigo" name="codigo" value="<?php echo $codigo ?>" />
        <input type="hidden" id="correo" name="correo" value="<?php echo $correo ?>" />
         <label for="contraseña">Contrasena Anterior</label>
-        <input  type="password" id="contraseña" name="contraseña" value="" required/>
+        <input  type="password" id="contraseña" name="contraseña" value="" placeholder="&#x1F511;" required/>
         <br>
 
         <label for="contraseña">Nueva Contrasena </label>
-        <input type="password" id="nueva_contraseña" name="nueva_contraseña" value=""  required/>
+        <input type="password" id="nueva_contraseña" name="nueva_contraseña" value="" placeholder="&#x1F511;"  required/>
 
         <br>
 
-        <input type="submit" id="crear" name="crear" value="Cambiar" />
-        <input type="button" id="cancelar" name="cancelar" value="Cancelar" onclick="history.go(-1)"/>
+        <input type="submit" class="fondo_boton" id="crear" name="crear" value="Cambiar" />
+        <input type="button" class="fondo_boton" id="cancelar" name="cancelar" value="Cancelar" onclick="history.go(-1)"/>
        </form>
         
 

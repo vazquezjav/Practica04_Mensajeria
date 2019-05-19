@@ -1,0 +1,110 @@
+.centro{
+    text-align: center;
+    background-image: url("../Imagenes/index.JPG");
+    width: 100%;
+    min-height:100%;
+     margin-left: auto;
+     margin-right: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    float: left;
+
+}
+td{
+    text-align: center;
+    background-color: rgb(241, 222, 222);
+}
+table{
+    border-width: 1px;
+    border-color: rgb(22, 97, 97);
+    border-style: groove;
+    border-spacing: 3px;
+    align-content: center;
+    width: 75%;
+    margin-left: 5px;
+
+}
+th{
+    text-align: center;
+    align-content: center;
+    border-width: 2px;
+    background: rgb(164, 235, 235);
+}
+h1{
+    color: aqua;
+}
+.busqueda{
+    background-color: antiquewhite;
+}
+ul{
+    color: bisque;
+    border: 1px solid #c1c1c1;
+}
+
+nav {
+	width: 25%;
+	float: left;
+	margin: 6% 2% 0% 0%;
+}
+
+nav ul li {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+	font-size: 0.8em;
+}
+
+nav ul li a {
+	color: rgb(143, 62, 62);
+	text-decoration: none;
+	display: block;
+	margin-bottom: 8%;
+}
+nav ul li a:visited {
+	color: rgb(165, 104, 104);
+}
+nav ul li a:hover {
+	background-color: rgb(206, 117, 117);
+	color: white;
+}
+nav ul li a:focus {
+	outline: thin dotted;
+}
+nav ul li a:hover, nav ul li a:active {
+	outline: 0;
+}
+
+nav ul li {
+	display: table-cell;
+	width: 15%;
+	text-align: center;
+	margin-right: 2%;
+	border: thin solid rgb(127, 21, 17);
+	border-collapse: collapse;
+}
+nav ul li a {
+	margin-bottom: 0;
+}
+nav {
+	display: table;
+	width: 96%;
+	margin: 0 auto;
+	float: none;
+}
+nav ul {
+	display: table-row;
+	margin: 0;
+}
+nav ul li:last-of-type {
+	margin-right: 0%;
+}
+ul{
+    /*background-color: rgb(24, 56, 29);*/
+    background-color: rgb(141, 221, 151);
+}
+h2{
+    color: brown;
+    font-family: cursive;
+}
+p {
+    color: crimson;
+}

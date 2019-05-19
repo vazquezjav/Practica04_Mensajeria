@@ -11,6 +11,7 @@
 <head>
     <title> Configuracion</title>
     <meta charset="UTF-8">
+    <link href="../estilos/micuenta.css" rel="stylesheet" />
 </head>
 <header>
     <h1>Cambiar Informacion </h1>
@@ -18,17 +19,18 @@
         <ul>
             <?php
             $correo=$_GET['correo'];
-            echo " <a href='index.php?correo=$correo'>  Inicio  </a>" ;
-            echo "<a href='nuevo_mensaje.php?correo=$correo'>  Nuevo Mensaje</a>";
-            echo " <a href='mensajes_enviados.php?correo=$correo'> Mensajes Enviados  </a>";
-            echo "<a href='micuenta.php?correo=$correo'>Mi Cuenta  </a>";
+            #echo "<meta http-equiv='Refresh' content='3;url=index.php?correo=$correo'";
+            echo "<li> <a href='index.php?correo=$correo'>  Inicio  </a></li>" ;
+            echo "<li><a href='nuevo_mensaje.php?correo=$correo'>  Nuevo Mensaje</a></li>";
+            echo "<li> <a href='mensajes_enviados.php?correo=$correo'> Mensajes Enviados  </a></li>";
+            echo "<li><a href='micuenta.php?correo=$correo'>Mi Cuenta  </a></li>";
             ?>
         </ul>
     </nav>
 </header>
 
-<body>
-    
+<body class="centro">
+    <br>
         <table style="width:100%" border=1>
             <tr>
                 <th>Cedula</th>
@@ -46,8 +48,6 @@
                 #$correo=$_GET['correo'];
                 $sql ="SELECT * FROM usuario WHERE usu_correo='$correo'";
                 $result=$conn->query($sql);
-
-                echo "<p>$correo</p>";
                 if($result->num_rows>0){
                     while($row=$result->fetch_assoc()){
 

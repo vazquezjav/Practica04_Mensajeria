@@ -5,8 +5,9 @@
 </head>
 <header>
     <h1>Modificar usuario</h1>
+    <link href="../../../public/estilos/nuevo_mensaje.css" rel="stylesheet" />
 </header>
-<body >
+<body class="centro" >
     <?php
     include "../../../config/conexionBD.php";
     $codigo=$_GET['codigo'];
@@ -63,8 +64,8 @@
     
         echo " <br>";
     
-        echo" <input type='submit' id='crear' name='crear' value='Modificar' />";
-        echo" <input type='reset' id='cancelar' name='cancelar' value='Cancelar'/>";
+        echo" <input type='submit'class='fondo_boton' id='crear' name='crear' value='Modificar' />";
+        echo" <input type='reset'  class='fondo_boton'id='cancelar' name='cancelar' value='Cancelar' onclick='history.go(-1)' />";
         echo "</form>";
         }
     }else{

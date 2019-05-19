@@ -10,22 +10,22 @@
 <head>
     <title> Configuracion</title>
     <meta charset="UTF-8">
+    <link href="../../../public/estilos/admin_mensajes.css" rel="stylesheet" />
 </head>
 
 <header>
     <nav>
         <ul>
             <?php
-            echo " <a href='mensaje.php'>  Inicio  </a>" ;
-            echo "<a href='index_admin.php'> Usuarios </a>";
-            echo "<h1>" . $_SESSION['usu_rol'] . "</h1>";
+            echo "<li> <a href='mensaje.php'>  Inicio  </a></li>" ;
+            echo "<li><a href='index_admin.php'> Usuarios </a></li>";
             ?>
         </ul>
-    </nav>
+    </nav><br>
     </header>
 
-<body>
-    
+<body class="centro">
+    <br>
         <table style="width:100%" border=1>
             <tr>
                 <th>Cedula</th>

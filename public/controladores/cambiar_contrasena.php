@@ -15,10 +15,10 @@
         $modificacion=date('Y-m-d',time());
         $sqlCambiar="UPDATE usuario SET usu_password=MD5('$contrasena_nueva'), usu_fecha_modificacion='$modificacion' WHERE usu_codigo='$codigo'";
        $conn->query($sqlCambiar) ;
-       echo "<a href='../vista/micuenta.php?correo=$correo'> Regresar </a>";
+       #echo "<a href='../vista/micuenta.php?correo=$correo'> Regresar </a>";
+       header("Location: ../vista/micuenta.php?correo=$correo");
     }else{
-        echo "<h2> La contrasena actual no coincide </h2>";
-        echo "<a href='../vista/contrasena.php?codigo=$codigo&correo=$correo'> Regresar </a>";
+        header("Location: ../vista/contrasena.php?correo=$correo&codigo=$codigo");
        # header("Location: ../vista/contrasena.php?codigo=$codigo");
    }
    $conn->close();

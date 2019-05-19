@@ -22,7 +22,8 @@
         $sql="UPDATE usuario SET usu_eliminado ='S', usu_fecha_modificacion ='$modificacion' WHERE usu_codigo='$codigo'";
 
         if($conn->query($sql)===TRUE){
-            echo "<p> Se ha eliminado correcctamente el registro </p>";
+            #echo "<p> Se ha eliminado correcctamente el registro </p>";
+            header("Location: ../vista/usuario/index_admin.php");
 
         }else{
             if($conn->errno ==1062){
@@ -34,7 +35,7 @@
         }
 
         $conn->close();
-        echo "<a href='../vista/usuario/index_admin.php'>Regresar</a> "
+        #echo "<a href='../vista/usuario/index_admin.php'>Regresar</a> "
 
     ?>
 

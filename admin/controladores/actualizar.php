@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Datos Acutlizados</title>
+    <link href="../../../public/estilos/nuevo_mensaje.css" rel="stylesheet" />
     <style type="text/css" rel="stylesheet">
         .error{
             color: orange;
@@ -28,9 +29,9 @@
 
         $sql="UPDATE usuario SET usu_nombres='$nombre', usu_apellidos='$apellido', usu_cedula='$cedula', usu_direccion='$direccion',
                 usu_fecha_nacimiento='$fechaNacimiento', usu_fecha_modificacion='$modificacion', usu_rol='$rol' WHERE usu_codigo='$codigo'";
-        echo "<p> $codigo  <p>";
         if($conn->query($sql)===TRUE){
-            echo "<p> Actualizado</p>";
+            #echo "<p> Actualizado</p>";
+            header("Location: ../vista/usuario/index_admin.php");
 
         }else{
             if($conn->errno ==1062){
@@ -42,7 +43,7 @@
         }
 
         $conn->close();
-        echo "<a href='../vista/usuario/index_admin.php'>Regresar</a> "
+        #echo "<a href='../vista/usuario/index_admin.php'>Regresar</a> "
 
     ?>
 

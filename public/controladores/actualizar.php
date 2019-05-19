@@ -39,8 +39,8 @@
        }
 
         if($conn->query($sql)===TRUE){
-            echo "<p> Actualizado</p>";
-
+            #echo "<p> Actualizado</p>";
+            header("Location: ../vista/micuenta.php?correo=$correo");
         }else{
             if($conn->errno ==1062){
                 echo "<p class='error'>La persona con la cedula $cedula ya esta registrada en el sistemas </p>";
@@ -51,7 +51,7 @@
         }
 
         $conn->close();
-        echo "<a href='../vista/micuenta.php?correo=$correo'>Regresar</a> "
+        #echo "<a href='../vista/micuenta.php?correo=$correo'>Regresar</a> "
 
     ?>
 
