@@ -10,6 +10,8 @@
 <head>
     <title>Principal</title>
     <meta charset="UTF-8"> 
+    <script type="text/javascript" src="../buscar/destinatario.js"></script>
+
 </head>
 <header>
     <h1>Mensajes Recibidos</h1>
@@ -27,7 +29,12 @@
 </header>
 
 <body>
-   
+    <form id="formulario2" >
+       <input type="text" id="busqueda" name="busqueda" value="" onkeyup="destinatario()">
+
+    </form>
+    <br>
+    <br>
     <table border="1">
         <tr>
             <th rowspan="1">Fecha</th>
@@ -55,6 +62,8 @@
             ?>
           
     </table>
+
+    <div id="informacion"><b></b></div>
 </body>
 
 </html>

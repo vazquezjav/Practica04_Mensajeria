@@ -46,6 +46,7 @@
             echo "<br>";
     
             echo"<input type='submit' id='login' name='login' value='Enviar Mensaje'/>";
+            echo"<input type='button' id='cancelar' name='cancelar' value='Cancelar' onclick='history.go(-1)'/>";
                 
             echo "</form>";
             ?>

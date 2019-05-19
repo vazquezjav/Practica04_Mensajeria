@@ -10,6 +10,7 @@
 <head>
     <title>Principal</title>
     <meta charset="UTF-8"> 
+    
     <script type="text/javascript" src="../buscar/ajax.js"></script>
     <?php
         include "../../config/conexionBD.php";
@@ -20,11 +21,13 @@
      ?>
 </head>
 <header>
+<!--<META HTTP-EQUIV="REFRESH" CONTENT="1;URL=index.php"> </head> -->
     <h1>Mensajes Recibidos</h1>
     <nav>
         <ul>
             <?php
             $correo=$_GET['correo'];
+            #echo "<meta http-equiv='Refresh' content='3;url=index.php?correo=$correo'";
             echo " <a href='index.php?correo=$correo'>  Inicio  </a>" ;
             echo "<a href='nuevo_mensaje.php?correo=$correo'>  Nuevo Mensaje</a>";
             echo " <a href='mensajes_enviados.php?correo=$correo'> Mensajes Enviados  </a>";

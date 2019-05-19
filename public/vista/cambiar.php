@@ -27,7 +27,7 @@
         $telefono=$row["usu_telefono"];
         $fecha=$row["usu_fecha_nacimiento"];
         $cedula=$row["usu_cedula"]; 
-        
+        $correo=$row["usu_correo"];
         echo "<form id='formulario1' method='POST' action='../controladores/actualizar.php'>";
 
         echo "<label for='codigo'>Codigo</label>";
@@ -67,7 +67,7 @@
        
     
         echo" <input type='submit' id='crear' name='crear' value='Modificar' />";
-        echo" <input type='reset' id='cancelar' name='cancelar' value='Cancelar'/>";
+        echo" <input type='button' id='cancelar' name='cancelar' value='Cancelar' onclick='history.go(-1)' />";
         echo "</form>";
         }
     }else{
@@ -77,6 +77,5 @@
     }
         
       ?>  
-
 </body>
 </html>

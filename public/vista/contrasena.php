@@ -34,7 +34,7 @@
         <br>
 
         <input type="submit" id="crear" name="crear" value="Cambiar" />
-        <input type="reset" id="cancelar" name="cancelar" value="Cancelar"/>
+        <input type="button" id="cancelar" name="cancelar" value="Cancelar" onclick="history.go(-1)"/>
        </form>
         
 

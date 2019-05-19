@@ -1,5 +1,4 @@
-
-function buscarPorCedula(){
+function destinatario(){
 
     var cedula = document.getElementById("busqueda").value;
 
@@ -17,12 +16,6 @@ function buscarPorCedula(){
             }
         };
     }
-    xmlhttp.open("GET","../controladores/buscar.php?cedula="+cedula,true);
+    xmlhttp.open("GET","../controladores/buscar_destinatario.php?cedula="+cedula,true);
     xmlhttp.send();
-}
-
-
-function borrar(){
-    document.getElementById("busqueda_mensaje").value = "p";
-
 }
