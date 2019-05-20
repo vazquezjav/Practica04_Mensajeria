@@ -43,7 +43,7 @@ ul{
 }
 
 nav {
-	width: 25%;
+	width: 55%;
 	float: left;
 	margin: 6% 2% 0% 0%;
 }
@@ -86,7 +86,7 @@ nav ul li a {
 }
 nav {
 	display: table;
-	width: 96%;
+	width: 55%;
 	margin: 0 auto;
 	float: none;
 }

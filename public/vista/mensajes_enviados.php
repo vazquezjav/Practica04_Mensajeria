@@ -15,7 +15,7 @@
 
 </head>
 <header>
-    <h1>Mensajes Recibidos</h1>
+    <h1>Mensajes Enviados</h1>
     <nav>
         <ul>
             <?php

@@ -34,6 +34,9 @@
             ?>
         </ul>
     </nav>
+    <?php
+     echo "<img src='../controladores/ver.php' style='position:absolute; top=0; left:0;' alt=''>";
+    ?>
 </header>
 
 <body class="centro">
