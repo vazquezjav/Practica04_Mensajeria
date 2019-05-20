@@ -36,11 +36,23 @@
 
         $sql="INSERT INTO usuario VALUES(0,'$cedula','$nombres','$apellidos','$direccion','$telefono','$correo',MD5('$contraseña'),'$fechaNacimiento','N',null,null,'U')";
         
-        $sql_img="INSERT INTO imagen VALUES(0,'$nombre_img','$imagenES','$modificacion')";
+        
 
-        if($conn->query($sql)===TRUE){
-            header("Location: ../vista/login.html");
-           # echo "<p> Se ha creado los datos personales correctamente </p>";
+
+        if($conn->query($sql)===TRUE ){
+            $sql_usuario="SELECT * FROM usuario WHERE usu_correo='$correo'";
+            $result=$conn->query($sql_usuario);
+            $row=mysqli_fetch_array($result);
+            $cod_usu=$row["usu_codigo"];
+    
+            $sql_img="INSERT INTO imagen VALUES(0,'$nombre_img','$imagenES','$modificacion','$cod_usu')";
+            if($conn->query($sql_img) === TRUE){
+                #echo "<p> Se imagen </p>";
+
+                header("Location: ../vista/login.html");
+            }else{
+                #echo "<p> No imagen </p>";
+            }
 
         }else{
             if($conn->errno ==1062){
@@ -50,11 +62,7 @@
                 echo"<p class='error' Error: ".mysql_error($conn). "</p>";
             }
         }
-        #if($conn->query($sql_img) === TRUE){
-         #   echo "<p> Se imagen </p>";
-        #}else{
-        #    echo "<p> No imagen </p>";
-        #}
+        
         #$img_codigo=$conn->insert_id;
         #echo "<img src='ver.php?codigo=$img_codigo' style='position:absolute; top=0; left:0;' alt=''>";
         $conn->close();

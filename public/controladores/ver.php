@@ -2,7 +2,7 @@
 
     include '../../config/conexionBD.php';
    # $codigo=$_GET['codigo'];
-    $cod=56;
+    $cod=$_GET['codigo'];
     $sql="SELECT * FROM imagen WHERE img_codigo='$cod'";
 
     $result=$conn->query($sql);

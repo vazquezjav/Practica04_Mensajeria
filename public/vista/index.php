@@ -12,15 +12,35 @@
     <meta charset="UTF-8">     
     <script type="text/javascript" src="../buscar/ajax.js"></script>
     <link href="../estilos/index.css" rel="stylesheet" />
-    <?php
+        <?php
         include "../../config/conexionBD.php";
-        $sql ="SELECT * FROM usuario";
-        $result=$conn->query($sql);
+       
         $remitente=$_GET['correo'];
-     ?>
+        $sql ="SELECT * FROM usuario WHERE usu_correo='$remitente'";
+        $result=$conn->query($sql);
+        $row2=mysqli_fetch_array($result);
+        $nombres=$row2["usu_nombres"];
+        $apellidos=$row2["usu_apellidos"];
+        $espacio='   ';
+        $cod_usu=$row2["usu_codigo"];
+
+        #obtener codigo para imagen 
+        $sql_img="SELECT * FROM imagen WHERE img_usuario='$cod_usu'";
+        $result2=$conn->query($sql_img);
+        $row3=mysqli_fetch_array($result2);
+        $cod_img=$row3["img_codigo"];
+        echo"<p> $cod_usu </p>";
+     ?>    
+    
 </head>
 <header>
-<!--<META HTTP-EQUIV="REFRESH" CONTENT="1;URL=index.php"> </head> -->
+    <h4 id="sesion"><a href="../../config/cerrar_sesion.php">Cerrar Sesion</a></h4><br><br>
+    <?php
+        echo"<img src='../controladores/ver.php?codigo=$cod_img' alt='' />";
+    ?>
+    <!--<img src="../controladores/ver.php"  alt="Amonnn" title="Imgennx"/>-->
+   <!-- <h4 id="nombres">Nombres</h4>-->
+    <!--<META HTTP-EQUIV="REFRESH" CONTENT="1;URL=index.php"> </head> -->
     <h1>Mensajes Recibidos</h1>
     <nav>
         <ul>
@@ -34,13 +54,12 @@
             ?>
         </ul>
     </nav>
-    <?php
-     echo "<img src='../controladores/ver.php' style='position:absolute; top=0; left:0;' alt=''>";
-    ?>
+    
 </header>
 
 <body class="centro">
     <br>
+    <h4 id="nombres"><?php echo $nombres,$espacio, $apellidos?></h4>
     <form id="formulario1" >
        <input type="text" class="busqueda" id="busqueda" name="busqueda"  value="" placeholder=" &#x1F50E; "  onkeyup="buscarPorCedula()">
 
