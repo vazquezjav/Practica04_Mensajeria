@@ -1,6 +1,6 @@
 Diagrama entidad relacion 
 
-<img src="public/Imagenes/admin_fondo.png" />
+<img src="public/Imagenes/index.jpg" />
 
 Para los roles de los usuarios creamos una columna la cual le identificarnos como usu_rol por defecto creamos únicamente un administrador, y las cuentas que se vallan creando en la base, serán por default usuarios, y después el administrador general podrá modificar estos datos y si quiere o no tener mas administradores 
 
