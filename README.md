@@ -1,2 +1,2 @@
 Diagrama entidad relacion 
-<img src="public/Imagenes/base.jpg" />
+<img src="public/Imagenes/admin_fondo.png" />
