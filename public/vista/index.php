@@ -84,6 +84,10 @@
                         echo "  <td align=center>" .$row["men_asunto"]."</td>";
                         echo "  <td align=center>" .$row["men_mensaje"]."</td>";
                         echo "</tr>";
+                        }else{
+                            echo "<tr>";
+                            echo "<td colspan='4' class='nulo'><b> No tiene mensajes</b> </td>";
+                            echo "</tr>";
                         }
                     }
                 }else{

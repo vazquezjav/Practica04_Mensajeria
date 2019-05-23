@@ -9,6 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <link href="../estilos/nuevo_mensaje.css" rel="stylesheet" />
+    <title>Modificar Datos Usuario </title>
 </head>
 <header>
     <h1>Modificar usuario</h1>
