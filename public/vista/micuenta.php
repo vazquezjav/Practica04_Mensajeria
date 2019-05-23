@@ -31,45 +31,65 @@
 
 <body class="centro">
     <br>
-        <table style="width:100%" border=1>
-            <tr>
-                <th>Cedula</th>
-                <th>Nombres</th>
-                <th>Apellidos</th>
-                <th>Direccion</th>
-                <th>Telefono</th>
-                <th>Correo</th>
-                <th>Fecha Nacimiento </th>
-                <th>Modificar </th>
-                <th> Cambiar Contrasena</th>
-            </tr>
+    <form id="formulario"  method="POST" action="cambiar.php">
             <?php
                 include "../../config/conexionBD.php";
                 #$correo=$_GET['correo'];
                 $sql ="SELECT * FROM usuario WHERE usu_correo='$correo'";
                 $result=$conn->query($sql);
+                
                 if($result->num_rows>0){
                     while($row=$result->fetch_assoc()){
-
                         if($row["usu_eliminado"]=='N'){
-                            echo "<tr>";
+                            $cedula=$row["usu_cedula"];
+                            $nombre=$row["usu_nombres"];
+                            $apellido=$row["usu_apellidos"];
+                            $direccion=$row["usu_direccion"];
+                            $telefono=$row["usu_telefono"];
+                            $fecha=$row["usu_fecha_nacimiento"];
                             $codigo=$row["usu_codigo"];
-                            echo "  <td align=center>" .$row["usu_cedula"]."</td>";
-                            echo "  <td align=center>" .$row["usu_nombres"]."</td>";
-                            echo "  <td align=center>" .$row["usu_apellidos"]."</td>";
-                            echo "  <td align=center>" .$row["usu_direccion"]."</td>";
-                            echo "  <td align=center>" .$row["usu_telefono"]."</td>";
-                            echo "  <td align=center>" .$row["usu_correo"]."</td>";
-                            echo "  <td align=center>" .$row["usu_fecha_nacimiento"]."</td>";
-                            echo "  <td align=center>" ."<a href='cambiar.php?codigo=$codigo'>Modificar</a>". "</td>";
-                            echo "  <td align=center>" ."<a href='contrasena.php?codigo=$codigo&correo=$correo'>Cambiar Contrasena</a>". "</td>";
+                            echo  "<label for='cedula'>Cedula </label>";
+                            echo "<input type='text' readonly='readonly'  id='cedula' name='cedula' value='$cedula'  required/>";
+
+                            echo "<br>";
+    
+                            echo "<label for='nombres'>Nombres </label>";
+                            echo "<input type='text' readonly='readonly'  id='nombres' name='nombres' value='$nombre'  required/>";
+    
+                            echo "<br>";
+    
+                            echo "<label for='apellidos'>Apellido </label>";
+                            echo "<input type='text' readonly='readonly'   id='apellidos' name='apellidos' value='$apellido'  required/>";
+    
+                            echo "<br>";
+    
+                            echo "<label for='direccion'>Direccion </label>";
+                            echo "<input type='text' readonly='readonly'  id='direccion' name='direccion' value='$direccion' required/>";
+    
+                            echo "<br>";
+    
+                            echo "<label for='telefono'>Telefono </label>";
+                            echo "<input type='text' readonly='readonly'  id='telefono' name='telefono' value='$telefono'  required/>";
+    
+                            echo "<br>";
+            
+                            echo "<label for='fecha'>Fecha Nacimiento </label>";
+                            echo "<input type='date' readonly='readonly'   id='fechaNacimiento' name='fechaNacimiento' value='$fecha' required/>";
+                            echo "<br>";
+
+                            echo "<label for='correo'>Correo </label>";
+                            echo "<input type='text' readonly='readonly'   id='correo' name='correo' value='$correo' required/>";
+                            echo "<br>";
+                            echo "<input type='hidden' readonly='readonly'  id='codigo' name='codigo' value='$codigo' />";
+                            echo"<input type='submit' class='fondo_boton' id='correo' name='correo' value='Modificar'/>";
+
+                            #echo"<input type='button' class='fondo_boton' id='modificar' name='modificar' value='Modificar' onclick='location='cambiar.php''/>";
                         }
-                      
                     }
                 }
             ?>
-
-        </table>
+            <input type="button" class="fondo_boton" id="contrasena" name="modificar" value="Cambiar Contrasena" onclick="location='contrasena.php'"/>
+            </form>
 </body>
 
 </html>

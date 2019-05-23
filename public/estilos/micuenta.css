@@ -108,3 +108,82 @@ h2{
 p {
     color: crimson;
 }
+
+form {
+    padding: 1em;
+    border: 1px solid #c1c1c1;
+    margin-top: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+    text-align: center;
+    background: rgba(184, 209, 184, 0.3);
+
+    border-width: 2px;
+    border-color: rgba(184, 209, 184, 0.3);
+    border-style: inset;
+    align-content: center;
+}
+form input {
+    margin-bottom: 1rem;
+    background: rgb(226, 192, 192);
+    border: 1px solid #9c9c9c;
+}
+form button {
+    background: rgb(243, 77, 77);
+    padding: 0.7em;
+    border: 0;
+}
+form button:hover {
+    background: rgb(101, 180, 55);
+}
+text{
+    align-content: center;
+}
+label {
+    text-align: center;
+    display: block;
+    padding: 1em 1.5em 1em 0;
+}
+legend{
+    color: rgb(50, 188, 223);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+  
+input {
+    width: 50%;
+    padding: 0.7em;
+    margin-bottom: 0.5rem;
+  }
+  input:focus {
+    outline: 3px solid rgb(11, 194, 201);
+  }
+
+  @media (min-width: 600px) {
+form {
+      overflow: auto;
+ }
+  
+label {
+      float: left;
+      width: 300px;
+}
+  
+input {
+      float: left;
+      width: calc(100% - 200px);
+}
+
+button {
+      float: left;
+      width: calc(50% - 200px);
+}
+}
+.fondo_boton{
+    background: rgb(231, 116, 108);
+    border-radius: 90px 90px 90px 90px;
+    width: 30%;
+    float: center;
+    align-items: center;
+}

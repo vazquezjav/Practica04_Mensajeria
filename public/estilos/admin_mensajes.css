@@ -110,3 +110,14 @@ h2{
 p {
     color: crimson;
 }
+#sesion{
+    float: right;
+    color: rgb(225, 238, 48);
+    text-align: left;
+    margin: 5px 20px;
+    /*background-color: rgba(189, 15, 145, 0.3);*/
+    text-decoration: chartreuse;
+}
+#cerrar{
+    color: aquamarine;
+}

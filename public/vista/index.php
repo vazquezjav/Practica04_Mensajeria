@@ -29,7 +29,6 @@
         $result2=$conn->query($sql_img);
         $row3=mysqli_fetch_array($result2);
         $cod_img=$row3["img_codigo"];
-        echo"<p> $cod_usu </p>";
      ?>    
     
 </head>
@@ -87,6 +86,10 @@
                         echo "</tr>";
                         }
                     }
+                }else{
+                    echo "<tr>";
+                    echo "<td colspan='4' class='nulo'><b> No tiene mensajes</b> </td>";
+                    echo "</tr>";
                 }
             ?>
           

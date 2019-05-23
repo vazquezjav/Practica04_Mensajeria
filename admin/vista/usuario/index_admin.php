@@ -14,6 +14,7 @@
 </head>
 
 <header>
+<h4 id="sesion"><a id="cerrar" href="../../../config/cerrar_sesion.php">Cerrar Sesion</a></h4>
     <nav>
         <ul>
             <?php

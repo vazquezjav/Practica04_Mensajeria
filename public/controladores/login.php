@@ -13,6 +13,7 @@
         $_SESSION['isLogged']=TRUE;
         $_SESSION['usu_rol']=$row['usu_rol'];
         $_SESSION['usu_correo']=$row['usu_correo'];
+        $_SESSION['usu_codigo']=$row['usu_codigo'];
         if($row['usu_rol']=='A'){
             header("Location: ../../admin/vista/usuario/index_admin.php");
         }else{

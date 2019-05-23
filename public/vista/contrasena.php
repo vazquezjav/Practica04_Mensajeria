@@ -15,9 +15,10 @@
 </header>
 <body class="centro">
     <?php
-    #include "../../config/conexionBD.php";
-    $codigo=$_GET['codigo'];
-    $correo=$_GET['correo'];
+    #session_start();
+    include '../../config/conexionBD.php';
+    $codigo=$_SESSION['usu_codigo'];
+    $correo=$_SESSION['usu_correo'];
    # echo "<p>$correo</p>";
     ?>
     

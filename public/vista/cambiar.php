@@ -16,7 +16,7 @@
 <body class="centro">
     <?php
     include "../../config/conexionBD.php";
-    $codigo=$_GET['codigo'];
+    $codigo=$_POST['codigo'];
     $sql ="SELECT * FROM usuario WHERE usu_codigo=$codigo";
     $result=$conn->query($sql);
     # echo "<p>$codigo</p>";

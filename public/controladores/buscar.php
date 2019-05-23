@@ -7,8 +7,6 @@
    <?php
        session_start();
         include '../../config/conexionBD.php';
-        
-
         $remitente = $_GET['cedula'];
         $destinatario=$_SESSION['usu_correo'];
        # echo "<p>".$cedula ."</p>";
